@@ -5,6 +5,8 @@ def urlify_v1(s: str, n: int) -> str:
     Precondition: - s has sufficient space at the end for additional characters
                   - n is the true length of the string
 
+    Time Complexity: O(n)
+    Space Complexity: O(s)
     """
     space_counter = 0
 

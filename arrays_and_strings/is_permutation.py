@@ -5,6 +5,9 @@ def is_permutation(s1: str, s2: str) -> bool:
     Check if two strings are permutations of one another
 
     Precondition: both strings belong to extended ASCII character set
+
+    Time Complexity: O(s1 + s2)
+    Space Complexity: O(s1 + s2)
     """
     if len(s1) != len(s2):
         return False

@@ -3,6 +3,9 @@ def is_unique_dict_implementation(s: str) -> bool:
     Check if a string has all unique characters
 
     Precondition: s belongs to extended ASCII character set
+
+    Time Complexity: O(s)
+    Space Complexity: O(s)
     """
     if (len(s) > 256):
         return False
@@ -22,6 +25,9 @@ def is_unique_bitwise_implementation(s: str) -> bool:
     Check if a string has all unique characters
 
     Precondition: s belongs to lowercase letters set
+
+    Time Complexity: O(s)
+    Space Complexity: O(s)
     """
     checker = 0
 
