@@ -1,20 +1,15 @@
-import string
-
-from pip import main
-
-
-def is_unique_dict_implementation(str: string) -> bool:
+def is_unique_dict_implementation(s: str) -> bool:
     """
     Check if a string has all unique characters
 
-    Precondition: str belongs to extended ASCII character set
+    Precondition: s belongs to extended ASCII character set
     """
-    if (len(str) > 256):
+    if (len(s) > 256):
         return False
     
     char_set = {}
 
-    for char in str:
+    for char in s:
         if char in char_set:
             return False
         
@@ -22,15 +17,15 @@ def is_unique_dict_implementation(str: string) -> bool:
 
     return True
 
-def is_unique_bitwise_implementation(str: string) -> bool:
+def is_unique_bitwise_implementation(s: str) -> bool:
     """
     Check if a string has all unique characters
 
-    Precondition: str belongs to lowercase letters set
+    Precondition: s belongs to lowercase letters set
     """
     checker = 0
 
-    for char in str:
+    for char in s:
         val = ord(char) - ord('a')
 
         if (checker & (1 << val) > 0):
