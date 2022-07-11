@@ -27,7 +27,7 @@ def is_unique_bitwise_implementation(s: str) -> bool:
     Precondition: s belongs to lowercase letters set
 
     Time Complexity: O(s)
-    Space Complexity: O(s)
+    Space Complexity: O(1)
     """
     checker = 0
 
