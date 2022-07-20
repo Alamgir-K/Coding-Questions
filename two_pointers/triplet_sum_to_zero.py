@@ -2,8 +2,8 @@ def triplet_sum_to_zero(arr: list) -> list:
     """
     Given an array of unsorted numbers, find all unique triplets in it that add up to zero.
 
-    Time Complexity: O(n) where n = len(arr)
-    Space Complexity: O(1)
+    Time Complexity: O(nlogn + n^2) where n = len(arr)
+    Space Complexity: O(n)
     """
     def search_pair(arr, target, left, triplets):
         right = len(arr) - 1
