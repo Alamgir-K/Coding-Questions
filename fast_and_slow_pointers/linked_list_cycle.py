@@ -41,5 +41,39 @@ def test_linked_link_cycle():
     assert linked_link_cycle(head) == True
 
 
+def linked_link_cycle_length(head: Node) -> bool:
+    """
+    Given the head of a LinkedList with a cycle, find the length of the cycle.
+
+    Time Complexity: O(n) where n = len(arr)
+    Space Complexity: O(1)
+    """
+    def calculate_cycle_length(slow):
+        length = 0
+        current = slow
+
+        while True:
+            current = current.next
+            length += 1
+
+            if current == slow:
+                break
+        
+        return length
+
+
+    slow = head
+    fast = head
+
+    while fast is not None and fast.next is not None:
+        fast = fast.next.next
+        slow = slow.next
+
+        if slow == fast:
+            return calculate_cycle_length(slow)
+
+    return -1
+
+
 if __name__ == "__main__":
     test_linked_link_cycle()
