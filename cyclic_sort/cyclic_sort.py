@@ -13,7 +13,7 @@ def cyclic_sort(arr: list) -> list:
     while i < len(arr):
         j = arr[i] - 1
 
-        if i != j:
+        if arr[i] != arr[j]:
             arr[i], arr[j] = arr[j], arr[i]
         else:
             i += 1
