@@ -27,7 +27,7 @@ def minimum_depth(root: TreeNode) -> list:
         for _ in range(0, level_size):
             current = queue.popleft()
             
-            if current.left is None or current.right is None:
+            if current.left is None and current.right is None:
                 return depth
 
             if current.left:
