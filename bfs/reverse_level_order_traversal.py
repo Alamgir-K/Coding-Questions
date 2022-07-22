@@ -5,15 +5,15 @@ class TreeNode:
     self.val = val
     self.left, self.right = None, None
 
-def level_order_traversal(root: TreeNode) -> list:
+def reverse_level_order_traversal(root: TreeNode) -> list:
     """
-    Given a binary tree, populate an array to represent its level-by-level traversal. 
-    You should populate the values of all nodes of each level from left to right in separate sub-arrays.
+    Given a binary tree, populate an array to represent its level-by-level traversal in reverse order, i.e., the lowest level comes first. 
+    You should populate the values of all nodes in each level from left to right in separate sub-arrays.
 
     Time Complexity: O(n) where n = len(arr)
     Space Complexity: O(n)
     """
-    result = []
+    result = deque()
 
     if root is None:
         return result
@@ -33,21 +33,23 @@ def level_order_traversal(root: TreeNode) -> list:
                 queue.append(current.left)
             if current.right:
                 queue.append(current.right)
-        
-        result.append(current_level)
+
+        result.appendleft(current_level)
     
     return result
+
+    
     
 
-def test_level_order_traversal():
+def test_reverse_level_order_traversal():
     root = TreeNode(12)
     root.left = TreeNode(7)
     root.right = TreeNode(1)
     root.left.left = TreeNode(9)
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
-    print("Level order traversal: " + str(level_order_traversal(root)))
+    print("Reverse level order traversal: " + str(reverse_level_order_traversal(root)))
 
 
 if __name__ == "__main__":
-    test_level_order_traversal()
+    test_reverse_level_order_traversal()
